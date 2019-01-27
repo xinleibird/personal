@@ -22,44 +22,44 @@
 
 ## 1. 简单选择器
 
-1. 元素选择器 (Element Selectors)
+1. 元素选择器 (Element Selectors)  
    <kbd>元素名</kbd>
-2. 类选择器
+2. 类选择器  
    <kbd>.类名</kbd>
-3. id 选择器
+3. id 选择器  
    <kbd>#id</kbd>
-4. 通用选择器\
+4. 通用选择器  
    <kbd>\*</kbd>
 5. 组合器与多重选择器 (Combinators and Multiple Selectors)
-6. **后代选择器**
-   `A B` 表示 A 的任意**后代** B 元素
-7. **子选择器**
-   `A > B` 表示 A 的任意**子代** B 元素
-8. **相邻兄弟选择器**
-   `A + B` 表示 A  之后任意相邻的 B 兄弟元素 (一个)
-9. **通用兄弟选择器**
-   `A ~ B` 表示 A 之后的任意 B\* 兄弟元素 (多个)
-10. **多重选择器**
-    `A , B` 表示 A 和 B 同时选择
+   - **后代选择器**  
+     `A B` 表示 A 的任意**后代** B 元素
+   - **子选择器**  
+     `A > B` 表示 A 的任意**子代** B 元素
+   - **相邻兄弟选择器**  
+     `A + B` 表示 A  之后任意相邻的 B 兄弟元素 (一个)
+   - **通用兄弟选择器**  
+     `A ~ B` 表示 A 之后的任意 B\* 兄弟元素 (多个)
+   - **多重选择器**  
+     `A , B` 表示 A 和 B 同时选择
 
 ## 2. 属性选择器
 
-### 存在和值 (Presence and Value) 属性选择器
+1. 存在和值 (Presence and Value) 属性选择器
 
-1. `[attr]`: 选择包含 attr 属性的所有元素, 不考虑 attr 的值
-2. `[attr=val]`: 选择包含 attr 属性的, 值为 val 的所有元素
-3. `[attr~=val]`: 选择包含 attr 属性的, 值 **包含** val 的所有元素 (例如 `attr="aaa bbb **val** eee"`)
+- `[attr]`: 选择包含 attr 属性的所有元素, 不考虑 attr 的值
+- `[attr=val]`: 选择包含 attr 属性的, 值为 val 的所有元素
+- `[attr~=val]`: 选择包含 attr 属性的, 值 **包含** val 的所有元素 (例如 `attr="aaa bbb **val** eee"`)
 
-### 子串值 (Substring Value) 属性选择器
+2. 子串值 (Substring Value) 属性选择器
 
-1. `[attr|=val]`: 选择包含 attr 属性的, 值以 val 或者 val- 开头的所有元素
-2. `[attr^=val]`: 选择包含 attr 属性的, 值以 val 开头的所有元素
-3. `[attr$=val]`: 选择包含 attr 属性的, 值以 val 结尾的所有元素
-4. `[attr*=val]`: 选择包含 attr 属性的, 值中 **包含** val 所有元素
+- `[attr|=val]`: 选择包含 attr 属性的, 值以 val 或者 val- 开头的所有元素
+- `[attr^=val]`: 选择包含 attr 属性的, 值以 val 开头的所有元素
+- `[attr$=val]`: 选择包含 attr 属性的, 值以 val 结尾的所有元素
+- `[attr*=val]`: 选择包含 attr 属性的, 值中 **包含** val 所有元素
 
 ## 3. 伪类和伪元素
 
-### 伪类 (Pseudo-Class)
+1. 伪类 (Pseudo-Class)
 
 - :active
 - :any
@@ -102,7 +102,7 @@
 - :valid
 - :visited
 
-### 伪元素 (Pseudo-Element)
+2. 伪元素 (Pseudo-Element)
 
 所谓伪元素, 就是在元素边界内隐藏的子虚拟元素位置, 添加伪元素就相当于添加虚拟的子元素; 天生自带 content 属性
 
