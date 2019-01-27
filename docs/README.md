@@ -1,1 +1,1 @@
-[CSS 选择器] (CSS/selector)
+[CSS 选择器] (https://github.com/xinleibird/personal/css/selector)
