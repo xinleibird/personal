@@ -1,1 +1,1 @@
-[CSS 选择器] (CSS/selector.md)
+[CSS 选择器] (CSS/selector)
