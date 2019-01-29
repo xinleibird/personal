@@ -1,7 +1,9 @@
 # HTML
 
 # CSS
-[引入 CSS](https://xinleibird.github.io/personal/css/import)  
-[CSS 选择器](https://xinleibird.github.io/personal/css/selector)  
+[引入 CSS](https://xinleibird.github.io/personal/notes/css/import)  
+[CSS 选择器](https://xinleibird.github.io/personal/notes/css/selector)  
 
 # JavaScript
+
+[jQuery]()
