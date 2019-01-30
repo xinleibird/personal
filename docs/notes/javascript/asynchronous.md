@@ -18,29 +18,9 @@
 
 ## 4.1 回调函数
 
-回调函数式异步操作的基本方法
+明确的讲, 回调函数和异步没有直接关联. 有关联的是异步回调函数
 
 ```javascript
-function fn(callback) {
-  callback();
-  // ...
-}
-
-fn(() => console.log(2));
-```
-
-## 4.2 事件监听
-
-基本上浏览器中的所有 onXX 操作都是事件监听操作, 当该属性指向自定义的函数后, 当该属性所代表的事件发生后, 引擎会调用指向的函数.
-
-```javascript
-window.onload = () => console.log('hello');
-```
-
-## 4.3 发布订阅 (观察者模式)
-
-```javascript
-// 观察者
 const observe = {
   subs: new Set(),
   subscribe(sub) {
@@ -49,10 +29,22 @@ const observe = {
   unsubscribe(sub) {
     this.subs.delete(sub);
   },
-  publish(even) {
+  publish(event) {
     this.subs.forEach((sub) => {
       const s = sub;
-      s.even = even;
+      s.event = event;
+      new Promise((resolve, reject) => {
+        // ...
+        // 各种获取数据
+        s.data = 'something data';
+        if (true) {
+          resolve(s.data);
+        } else {
+          reject();
+        }
+      }).then((data) => {
+        console.log(event, data);
+      });
     });
   },
 };
@@ -62,38 +54,23 @@ class Subject {
   constructor() {
     // 向观察者注册自身
     observe.subscribe(this);
-    this.even = null;
+    this.event = '';
+    this.data = '';
 
     // 向观察者取消自身订阅
     this.unsubscribe = function unsubscribe() {
       observe.unsubscribe(this);
-      this.even = () => {};
+      this.event = '';
     };
   }
 }
 
 const s1 = new Subject();
 const s2 = new Subject();
-const s3 = new Subject();
-const s4 = new Subject();
 
-observe.publish(() => console.log('hello'));
-console.log(observe);
+observe.publish('something event and');
 
-s1.even(); // hello
-s2.even(); // hello
-s3.even(); // hello
-s4.even(); // hello
-
-s1.unsubscribe();
-s2.unsubscribe();
-s3.unsubscribe();
-s4.unsubscribe();
-
-s1.even(); // 空
-s2.even(); // 空
-s3.even(); // 空
-s4.even(); // 空
+console.log(s1, s2);
 ```
 
 # 5 异步操作的流程控制
@@ -102,10 +79,61 @@ s4.even(); // 空
 
 用某种方式控制其进入事件队列的时机, 从而能够依次执行而不是并行执行
 
+```javascript
+const asyn = new Promise((resolve) => {
+  console.log('a');
+  resolve(this);
+});
+
+asyn
+  .then(console.log('b'))
+  .then(console.log('c'))
+  .then(console.log('d'));
+```
+
 ## 5.2 并行执行
 
 只要进入事件队列, 其中的事件都是并行执行的. 这种方式高效, 但是并行规模过大时会提高 cpu 占用率
 
+```javascript
+function asyn(callback) {
+  setTimeout(callback, 1000);
+  return asyn;
+}
+
+function a() {
+  console.log('a');
+}
+
+function b() {
+  console.log('a');
+}
+
+function c() {
+  console.log('a');
+}
+
+asyn(a)(b)(c);
+```
+
 ## 5.3 并行与串行结合
 
 用某种方式控制并行的规模, 降低 cpu 占用
+
+```javascript
+const asyn = new Promise((resolve) => {
+  console.log('a');
+  resolve(this);
+});
+
+asyn
+  .then(console.log('b'))
+  .then(console.log('b'))
+  .then(console.log('b'));
+
+asyn
+  .then(console.log('c'))
+  .then(console.log('c'))
+  .then(console.log('c'));
+
+```
