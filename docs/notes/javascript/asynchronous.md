@@ -20,6 +20,12 @@
 
 明确的讲, 回调函数和异步没有直接关联. 有关联的是异步回调函数
 
+## 4.2 事件监听
+
+引擎中的各种 on 事件, 就是事件监听的代表
+
+## 4.3 发布订阅 / 观察者模式
+
 ```javascript
 const observe = {
   subs: new Set(),
@@ -135,5 +141,19 @@ asyn
   .then(console.log('c'))
   .then(console.log('c'))
   .then(console.log('c'));
-
 ```
+
+# 6 定时器
+
+## 6.1 定时器方法
+
+1. setTimeout()
+2. setInterval()
+3. clearTimeout()
+4. clearInterval()
+
+## 6.2 运行机制
+
+setTimeout 和 setInterval 方法是将当前代码移出主线程加入任务队列, 并且踢出本轮的事件循环. 在设定的时间结束后等待回调. 如果主线程内相应的代码 (同步) 未运行结束, 则继续等待其结束再进行.
+
+> setTimeout(something, 0), 意味着移出主线程, 本轮事件循环不参与, 等待主线程任务完成, 可以用来调整代码的执行顺序.
