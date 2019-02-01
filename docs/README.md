@@ -6,5 +6,5 @@
 
 # JavaScript
 
-[jQuery]()  
+[JavaScript 基础](https://xinleibird.github.io/personal/notes/javascript/basic)  
 [JavaScript 中的异步](https://xinleibird.github.io/personal/notes/javascript/asynchronous)  
