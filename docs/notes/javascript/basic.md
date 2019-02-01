@@ -1,22 +1,23 @@
 # 1. 基础内容
 
-## JavaScript 组成
+## 1.1 JavaScript 组成
 
-- ECMAScript(ES)
-- DOM
-- BOM
+* ECMAScript(ES)
+* DOM
+* BOM
 
 ---
 
-## 全局对象和全局的对象
+## 1.2 全局对象和全局的对象
 
 1. 全局对象 global object
-   > object
+   > window
 2. 全局的对象（标准内置对象） global objects
-   > String, Array, Function .....
+   > String, Array, Function ...
+
 ---
 
-## 创建变量
+## 1.3 创建变量
 
 1. var
 2. function
@@ -27,7 +28,7 @@
 
 ---
 
-## 数据类型分类
+## 1.4 数据类型分类
 
 ### 基本数据类型
 
@@ -50,12 +51,12 @@
 
 ---
 
-## 5.数据类型剖析
+## 1.5 数据类型剖析
 
 ### number
 
-- NaN typeof number
-  - NaN != NaN
+- NaN typeof
+  - NaN !== NaN
 - isNaN() 和 Number.isNaN()
   - isNaN() 全局对象，强制类型转换
   - Number.isNaN() 加强版，不进行类型转换
@@ -72,6 +73,7 @@
   - !!null
   - !!NaN
   - !!undefined
+
 ### null && undefined
 
 ### object
@@ -482,7 +484,7 @@ nodeType - nodeName - nodeValue
 
 1. 所有函数类型都自带一个 prototype 属性，指向原型对象
 2. 此 prototype 属性包含一个 constructor 属性，该属性指向自身
-3. 所有实例对象都包含一个 ****proto**** 属性，该属性指向当前实例所属原型对象的 prototype 属性
+3. 所有实例对象都包含一个 \***\*proto\*\*** 属性，该属性指向当前实例所属原型对象的 prototype 属性
    this 只在函数体内部有意义
    箭头函数无 this
 
@@ -629,7 +631,6 @@ String.match() 返回一个数组或者在未匹配到时返回 null
 String.search() 返回匹配到的位置索引, 或者在失败时返回-1
 Stirng.replace() 使用替换字符串替换掉匹配到的子字符串
 String.split() 分隔一个字符串, 并将分隔后的子字符串存储到数组中
-
 
 定时器
 
