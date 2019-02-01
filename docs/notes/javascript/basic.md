@@ -1,12 +1,10 @@
-# 1. 基础内容
+# 1. 语言基础
 
 ## 1.1 JavaScript 组成
 
-* ECMAScript(ES)
-* DOM
-* BOM
-
----
+- ECMAScript(ES)
+- DOM
+- BOM
 
 ## 1.2 全局对象和全局的对象
 
@@ -14,8 +12,6 @@
    > window
 2. 全局的对象（标准内置对象） global objects
    > String, Array, Function ...
-
----
 
 ## 1.3 创建变量
 
@@ -25,8 +21,6 @@
 4. const
 5. import
 6. class
-
----
 
 ## 1.4 数据类型分类
 
@@ -48,8 +42,6 @@
    5. ...
 2. function
 3. Symbol 创建一个唯一的值
-
----
 
 ## 1.5 数据类型剖析
 
@@ -78,18 +70,14 @@
 
 ### object
 
----
-
-## 数据类型检测
+## 1.6 数据类型检测
 
 1. typeof
 2. instanceof
 3. constructor()
 4. Object.prototype.toString.call()
 
----
-
-## 操作语句
+## 1.7 操作语句
 
 1. 判断
 
@@ -103,11 +91,7 @@
 - for in
 - while
 
----
-
-# 2. 基础进阶
-
-## JavaScript 中的数据类型转换
+## 1.8 JavaScript 中的数据类型转换
 
 ### 把非 number 类型转换为 number 类型
 
@@ -166,9 +150,7 @@ undefined -> 'undefined'
 
 ### 比较运算中的类型转换
 
----
-
-## 数组及常用方法
+## 1.9 数组及常用方法
 
 数组是对象类型，也是由键值对组成的
 
@@ -312,7 +294,7 @@ undefined -> 'undefined'
 
 ---
 
-## 字符串及常用方法
+## 1.10 字符串及常用方法
 
 length 属性
 
